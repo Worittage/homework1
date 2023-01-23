@@ -8,7 +8,7 @@ alert(a);
 //задание 2
 
 let year = 2007;
-alert(a);
+alert(year);
 
 //задание 3
 
@@ -34,26 +34,26 @@ alert(result);
 
 let num = 9;
 let b = 2;
-let remainder = a % b;
+let remainder = num % b;
 alert(remainder);
 
 //задание 7
 
 let numberi = 1;
 
-num += 5;
+numberi += 5;
 
-num -= 3;
+numberi -= 3;
 
-num *= 7;
+numberi *= 7;
 
-num /= 3;
+numberi /= 3;
 
-num++;
+numberi++;
 
-num--;
+numberi--;
 
-alert(num);
+alert(numberi);
 
 let age = prompt("How old are you?");
 alert(age);
@@ -84,7 +84,7 @@ console.log(user.cityOfResidence);
 
 //задание 9.2
 
-let newAge = 45;
+let user = 45;
 user.age = newAge;
 console.log(user.age);
 
