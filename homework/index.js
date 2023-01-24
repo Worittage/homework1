@@ -60,7 +60,7 @@ alert(age);
 
 //задание 8
 
-let user = {
+let usere = {
   name: "Bezerdic Eugen",
   age: 30,
   isAdmin: true,
@@ -68,7 +68,7 @@ let user = {
 
 // задание 9.0
 
-let username = {
+let user = {
   name: "John Doe",
   age: 30,
   isAdmin: true,
@@ -78,7 +78,7 @@ console.log(user.age);
 console.log(user.isAdmin);
 
 //задание 9.1
-let usere = {};
+
 user.cityOfResidence = "New York";
 console.log(user.cityOfResidence);
 
