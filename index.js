@@ -1,66 +1,53 @@
-/*1 задание */
+/**1 задание */
+console.log("Hi");
+console.log("Hi");
 
-let password = "пароль";
-let input = prompt("Введите пароль");
+/**2 задание */
 
-if (input === password) {
-  console.log("Пароль введен верно");
-} else {
-  console.log("Пароль введен неправильно");
-}
-
-/**2 задание  */
-
-let c = 2;
-if (c > 0 && c < 10) {
-  console.log("верно");
-} else {
-  console.log("неверно");
+let num = 1;
+while (num < 6) {
+  console.log(num);
+  num++;
 }
 
 /**3 задание */
 
-let d = 50;
-let e = 120;
-
-if (d > 100 || e > 100) {
-  console.log(верно);
-} else {
-  console.log(неверно);
+let nume = 7;
+while (nume < 23) {
+  console.log(nume);
+  num++;
 }
 
 /**4 задание */
-let a = "2";
-let b = "3";
-alert(Number(a) + Number(b));
+
+const obj = { Kolya: 200, Vasya: 300, Petya: 400 };
+for (const key in obj) {
+  console.log(`${key}зарплата 200 доларов.`);
+}
 
 /**5 задание */
 
-let monthNumber = 12;
+let n = 1000;
+let numer = 0;
+while (n >= 50) {
+  n = n / 2;
+  numer++;
+}
+console.log(n, numer);
 
-if (monthNumber < 1 || monthNumber > 12) {
-  console.log("Неверный номер месяца. Пожалуйста, введите число от 1 до 12.");
+/**6 задание */
+let firstFriday;
+let date = new Date();
+
+// Determine the number of the first Friday of the month
+if (date.getDate() <= 7) {
+  firstFriday = 7 - ((date.getDay() + 6) % 7);
 } else {
-  switch (monthNumber) {
-    case 12:
-    case 1:
-    case 2:
-      console.log("зима");
-      break;
-    case 3:
-    case 4:
-    case 5:
-      console.log("весна");
-      break;
-    case 6:
-    case 7:
-    case 8:
-      console.log("лето");
-      break;
-    case 9:
-    case 10:
-    case 11:
-      console.log("осень");
-      break;
-  }
+  firstFriday = 7 - ((date.getDay() + 6) % 7) + 7;
+}
+
+// Print the reminder message for each Friday of the month
+for (let i = firstFriday; i <= 31; i += 7) {
+  if (i > 31) break;
+  console.log(`сегодня пятница, ${i}Нам нужно подготовить отчет.`);
 }
