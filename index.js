@@ -20,9 +20,14 @@ while (nume < 23) {
 
 /**4 задание */
 
-const obj = { Kolya: 200, Vasya: 300, Petya: 400 };
+const obj = {
+  Kolya: 200,
+  Vasya: 300,
+  Petya: 400,
+};
+
 for (const key in obj) {
-  console.log(`${key}зарплата 200 доларов.`);
+  console.log(`${key}'s salary is $${obj[key]}.`);
 }
 
 /**5 задание */
@@ -39,14 +44,12 @@ console.log(n, numer);
 let firstFriday;
 let date = new Date();
 
-// Determine the number of the first Friday of the month
 if (date.getDate() <= 7) {
   firstFriday = 7 - ((date.getDay() + 6) % 7);
 } else {
   firstFriday = 7 - ((date.getDay() + 6) % 7) + 7;
 }
 
-// Print the reminder message for each Friday of the month
 for (let i = firstFriday; i <= 31; i += 7) {
   if (i > 31) break;
   console.log(`сегодня пятница, ${i}Нам нужно подготовить отчет.`);
