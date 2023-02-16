@@ -1,126 +1,118 @@
-//* 1 задание
-let arr = [1, 5, 4, 10, 0, 3];
+/**1 задание */
+let str = "Hello Word";
+let strUpperCase = str.toUpperCase();
+console.log(strUpperCase);
 
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] === 10) {
-    console.log(arr[i]);
-    break;
-  } else {
-    console.log(arr[i]);
+/**2 задание */
+function searchStart(arr, str) {
+  const searchStr = str.toLowerCase();
+
+  const filteredArr = arr.filter((item) => {
+    const itemLowerCase = item.toLowerCase();
+
+    return itemLowerCase.startsWith(searchStr);
+  });
+  return filteredArr;
+}
+
+/**3 задание */
+let num = 32.58884;
+let roundedNum = Num.toFixed(1);
+
+let nr = 32.58884;
+let roundedNr = Math.round(nr);
+
+let numar = 32.58884;
+let roundedNumar = Math.floor(numar);
+
+/**4 задание */
+const numbers = [52, 53, 49, 77, 21, 32];
+
+const smallest = Math.min(...numbers);
+const largest = Math.max(...numbers);
+
+console.log(`Smallest number: ${smallest}`);
+console.log(`Largest number: ${largest}`);
+
+/**5 задание */
+function getRandomNumber() {
+  const min = 1;
+  const max = 10;
+  const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log(randomNum);
+}
+
+/**6 задание */
+function getRandomArrNumbers(num) {
+  const arrLength = Math.floor(num / 2);
+  const result = [];
+
+  for (let i = 0; i < arrLength; i++) {
+    result.push(Math.floor(Math.random() * (num + 1)));
   }
+  return result;
 }
-//* 2 задание
-let num = [1, 5, 4, 10, 0, 3];
+console.log(getRandomArrNumbers(7));
+console.log(getRandomArrNumbers(12));
 
-for (let i = 0; i < num.length; i++) {
-  if (num[i] === 4) {
-    console.log("Позиция числа 4 в массиве:", i);
-  }
-}
+/**7 задание */
 
-//* 3 задание
-
-let join = [1, 3, 5, 10, 20];
-
-let result = join.join(" ");
-
-console.log(result);
-
-//* 4 задание
-
-let originalArray = [];
-let evenArray = [];
-
-for (let i = 0; i < 10; i++) {
-  let randomNum = Math.floor(Math.random() * 11);
-  originalArray.push(randomNum);
-
-  if (randomNum % 2 === 0) {
-    evenArray.push(randomNum);
-  }
+function getRandomIntInRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log("Original Array:", originalArray);
-console.log("Array with even values:", evenArray);
+console.log(getRandomIntInRange(1, 10));
+console.log(getRandomIntInRange(50, 100));
 
-//* 5 задание
-let multidimensionalArray = [];
+/**8 задание */
+const currenteDate = new Date();
+console.log(currenteDate.toDateString());
 
-for (let i = 0; i < 3; i++) {
-  let innerArray = [];
+/**9 задание */
+const currentDate = new Date();
+const futureDate = new Date(currentDate);
+futureDate.setDate(currentDate.getDate() + 73);
 
-  for (let j = 0; j < 3; j++) {
-    innerArray.push(1);
-  }
+console.log(futureDate.toDateString());
 
-  multidimensionalArray.push(innerArray);
+/**10 задание */
+function formatDate(date) {
+  const daysOfWeek = [
+    "воскресенье",
+    "понедельник",
+    "вторник",
+    "среда",
+    "четверг",
+    "пятница",
+    "суббота",
+  ];
+  const months = [
+    "января",
+    "февраля",
+    "марта",
+    "апреля",
+    "мая",
+    "июня",
+    "июля",
+    "августа",
+    "сентября",
+    "октября",
+    "ноября",
+    "декабря",
+  ];
+
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  const dayOfWeek = daysOfWeek[date.getDay()];
+
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+  const seconds = date.getSeconds().toString().padStart(2, "0");
+
+  return `Date: ${day} ${month} ${year} is ${dayOfWeek}.\nTime: ${hours}:${minutes}:${seconds}`;
 }
-console.log(multidimensionalArray);
 
-//* 6 задание
-let originaliArray = [1, 1, 1];
-
-originaliArray.push(2, 2, 2);
-
-console.log(originaliArray);
-
-//* 7 задание
-let origiArray = [9, 8, 7, "a", 6, 5];
-
-origiArray.sort(function (a, b) {
-  return a - b;
-});
-
-let filteredArray = origiArray.filter(function (element) {
-  return typeof element === "number";
-});
-
-console.log(filteredArray);
-
-//* 8 задание
-let newArray = [9, 8, 7, 6, 5];
-
-let userInput = parseInt(prompt("Введите число от 1 до 10:"));
-
-if (newArray.includes(userInput)) {
-  console.log(`Номер ${userInput} находится в исходном массиве.`);
-} else {
-  console.log(`Номер ${userInput} не находится в исходном масиве`);
-}
-
-//* 9 задание
-let string = "abcdef";
-let reversedString = string.split("").reverse().join("");
-
-console.log(reversedString);
-
-//* 10 задание
-let numbers = [];
-for (let i = 0; i < 6; i++) {
-  numbers[i] = Math.floor(Math.random() * 10) + 1;
-}
-let sum = 0;
-for (let i = 0; i < numbers.length; i++) {
-  sum += numbers[i];
-}
-let mean = sum / numbers.length;
-console.log(mean);
-
-//* 11 задание
-let arra = [
-  [1, 2, 3],
-  [4, 5, 6],
-];
-let newArr = [];
-for (let i = 0; i < arra.length; i++) {
-  for (let j = 0; j < arra[i].length; j++) {
-    newArr.push(arra[i][j]);
-  }
-}
-console.log(newArr);
-
-//* 12 задание
-let ary = [1, 5, 2, 8, 9, 3];
-for (let i = 0; i < ary.length - 1; i++) {
-  console.log(ary[i] + ary[i + 1]);
-}
+const now = new Date();
+const formattedDate = formatDate(now);
+alert(formattedDate);
