@@ -1,118 +1,93 @@
 /**1 задание */
-let str = "Hello Word";
-let strUpperCase = str.toUpperCase();
-console.log(strUpperCase);
+function getResult(arr, callback) {
+  return callback(arr);
+}
+
+function sum(arr) {
+  return arr.reduce((total, num) => total + num, 0);
+}
+function mult(arr) {
+  return arr.reduce((total, num) => total * num, 1);
+}
+
+const arr = [3, 4, 1, 9];
+const resultSum = getResult(arr, sum);
+const resultMult = getResult(arr, mult);
 
 /**2 задание */
-function searchStart(arr, str) {
-  const searchStr = str.toLowerCase();
+const users = [
+  { name: "Jon", age: 22 },
+  { name: "Richard", age: 18 },
+  { name: "Anton", age: 32 },
+  { name: "Lida", age: 23 },
+  { name: "Bob", age: 44 },
+];
 
-  const filteredArr = arr.filter((item) => {
-    const itemLowerCase = item.toLowerCase();
-
-    return itemLowerCase.startsWith(searchStr);
-  });
-  return filteredArr;
-}
+users.sort((a, b) => a.age - b.age);
+console.log(users);
 
 /**3 задание */
-let num = 32.58884;
-let roundedNum = Num.toFixed(1);
+function each(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i], i, arr);
+  }
+}
 
-let nr = 32.58884;
-let roundedNr = Math.round(nr);
+function reversArr(element, index, array) {
+  const lastIndex = array.length - 1;
+  array[index] = array[lastIndex - index];
+  array[lastIndex - index] = element;
+}
 
-let numar = 32.58884;
-let roundedNumar = Math.floor(numar);
+function toNumberArr(element, index, array) {
+  const num = Number(element);
+  if (!isNaN(num)) {
+    array[index] = num;
+  } else {
+    array.splice(index, 1);
+  }
+}
+
+const arr1 = [1, "4", 9, "two"];
+each(arr1, reversArr);
+
+const arr2 = [1, "4", false, 9, "two"];
+each(arr2, toNumberArr);
 
 /**4 задание */
-const numbers = [52, 53, 49, 77, 21, 32];
+function printCurrenDate() {
+  const currentDate = new Date();
+  console.log(currentDate);
+}
 
-const smallest = Math.min(...numbers);
-const largest = Math.max(...numbers);
-
-console.log(`Smallest number: ${smallest}`);
-console.log(`Largest number: ${largest}`);
+let count = 0;
+const intervalId = setInterval(() => {
+  printCurrentDate();
+  count += 3;
+  if (count >= 30) {
+    clearInterval(intervalId);
+    console.log("30 секунд прошло");
+  }
+}, 3000);
 
 /**5 задание */
-function getRandomNumber() {
-  const min = 1;
-  const max = 10;
-  const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(randomNum);
+function calling() {
+  console.log("звоню!");
 }
 
-/**6 задание */
-function getRandomArrNumbers(num) {
-  const arrLength = Math.floor(num / 2);
-  const result = [];
-
-  for (let i = 0; i < arrLength; i++) {
-    result.push(Math.floor(Math.random() * (num + 1)));
-  }
-  return result;
-}
-console.log(getRandomArrNumbers(7));
-console.log(getRandomArrNumbers(12));
-
-/**7 задание */
-
-function getRandomIntInRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function beeps() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Идут гудки...");
+      resolve();
+    }, 1000);
+  });
 }
 
-console.log(getRandomIntInRange(1, 10));
-console.log(getRandomIntInRange(50, 100));
-
-/**8 задание */
-const currenteDate = new Date();
-console.log(currenteDate.toDateString());
-
-/**9 задание */
-const currentDate = new Date();
-const futureDate = new Date(currentDate);
-futureDate.setDate(currentDate.getDate() + 73);
-
-console.log(futureDate.toDateString());
-
-/**10 задание */
-function formatDate(date) {
-  const daysOfWeek = [
-    "воскресенье",
-    "понедельник",
-    "вторник",
-    "среда",
-    "четверг",
-    "пятница",
-    "суббота",
-  ];
-  const months = [
-    "января",
-    "февраля",
-    "марта",
-    "апреля",
-    "мая",
-    "июня",
-    "июля",
-    "августа",
-    "сентября",
-    "октября",
-    "ноября",
-    "декабря",
-  ];
-
-  const day = date.getDate();
-  const month = months[date.getMonth()];
-  const year = date.getFullYear();
-  const dayOfWeek = daysOfWeek[date.getDay()];
-
-  const hours = date.getHours().toString().padStart(2, "0");
-  const minutes = date.getMinutes().toString().padStart(2, "0");
-  const seconds = date.getSeconds().toString().padStart(2, "0");
-
-  return `Date: ${day} ${month} ${year} is ${dayOfWeek}.\nTime: ${hours}:${minutes}:${seconds}`;
+function talk() {
+  console.log("Разговор");
 }
 
-const now = new Date();
-const formattedDate = formatDate(now);
-alert(formattedDate);
+calling()
+  .then(() => beeps())
+  .then(() => talk());
