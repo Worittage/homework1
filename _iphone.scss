@@ -1,0 +1,121 @@
+@media (max-width: 1250px) {
+  .center {
+    padding-left: calc(50% - 171.5px);
+    padding-right: calc(50% - 171.5px);
+  }
+
+  .top {
+    max-width: 343px;
+  }
+
+  .top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-top-content {
+    font-size: 32px;
+    line-height: 39px;
+    width: 343px;
+    height: 77.44px;
+    text-align: center;
+  }
+
+  .text-top-content {
+    font-size: 14px;
+    line-height: 22px;
+    width: 343px;
+    height: 66px;
+    text-align: center;
+  }
+
+  .content-hw-two {
+    display: flex;
+    flex-direction: column;
+    margin-top: -105px;
+
+    .hw-two-img-one {
+      width: 343px;
+      height: 300px;
+    }
+    .hw-two-img-two {
+      width: 343px;
+      height: 300px;
+    }
+    .hw-two-img-three {
+      width: 343px;
+      height: 300px;
+    }
+  }
+
+  .hw-three {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-hw-three {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+
+    .title-hw-three {
+      display: contents;
+      font-size: 32px;
+      line-height: 39px;
+      width: 243px;
+      height: 39px;
+    }
+
+    .text-hw-three {
+      font-size: 14px;
+      line-height: 22px;
+      width: 343px;
+      height: 66px;
+      text-align: center;
+    }
+  }
+
+  .img-hw-three {
+    padding-top: 64px;
+    padding-left: 17px;
+  }
+
+  .hw-four {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: -425px;
+  }
+
+  .content-hw-four {
+    display: grid;
+    justify-content: end;
+    justify-items: center;
+
+    .text-hw-four {
+      font-size: 14px;
+      line-height: 22px;
+      width: 343px;
+      height: 66px;
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .title-hw-four {
+      font-size: 32px;
+      line-height: 39px;
+      width: 264px;
+      height: 39px;
+      text-align: center;
+    }
+  }
+
+  .img-hw-four {
+    margin-top: -190px;
+  }
+
+  .hw-five {
+    margin-top: -400px;
+  }
+}
