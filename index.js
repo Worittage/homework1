@@ -71,23 +71,22 @@ const intervalId = setInterval(() => {
 }, 3000);
 
 /**5 задание */
-function calling() {
-  console.log("звоню!");
+function calling(callback) {
+  console.log("Звоню");
+  beeps(callback);
 }
 
-function beeps() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      console.log("Идут гудки...");
-      resolve();
-    }, 1000);
-  });
+function beeps(callback) {
+  setTimeout(() => {
+    console.log("Идут гудки...");
+    callback();
+  }, 1000);
 }
 
 function talk() {
   console.log("Разговор");
 }
-
-calling()
-  .then(() => beeps())
-  .then(() => talk());
+calling(talk);
+/** Звоню!
+Идут гудки...
+Разговор*/
